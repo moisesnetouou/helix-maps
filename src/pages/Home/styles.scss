@@ -1,0 +1,19 @@
+.container{
+  height: 100vh;
+  margin: 0 auto;
+
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  max-width: 1120px;
+
+  @media (max-width: 56.25em) {
+    max-width: 100%;
+    padding: 0 2rem ;
+  }
+
+  h1 {
+    text-align: center;
+    padding-bottom: 2rem;
+  }
+}

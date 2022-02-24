@@ -1,0 +1,30 @@
+.map {
+  height: 50vh;
+ 
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.map-marker {
+  margin-top: -30px;
+}
+
+.location {
+  margin: 2rem 0;
+  padding: 2rem;
+  border-radius: 1rem;
+  
+  background: rgba(67, 65, 83, 0.55);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(6px);
+-webkit-backdrop-filter: blur(6px);
+border: 1px solid rgba(67, 65, 83, 0.21);
+  span {
+    color: #e0a67d;
+  }
+
+  h3 + h3 {
+    margin-top: 1rem;
+  }
+}

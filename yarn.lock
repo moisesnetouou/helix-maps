@@ -1963,6 +1963,11 @@
   dependencies:
     "@types/react" "*"
 
+"@types/react-geocode@^0.2.0":
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/@types/react-geocode/-/react-geocode-0.2.0.tgz#1044bf733382e9d5c9e3c4e84cbbf82c20987e2c"
+  integrity sha512-xypTvo8wQa2z2TJrYLiZYjyZvXbFNrf10a3U45Yzxq9+AARyr7ZZbMzUYejzPTBglI7/zNYnDEW6EdU0el/Hgg==
+
 "@types/react@*":
   version "17.0.39"
   resolved "https://registry.yarnpkg.com/@types/react/-/react-17.0.39.tgz#d0f4cde092502a6db00a1cded6e6bf2abb7633ce"
@@ -2944,7 +2949,7 @@ check-types@^11.1.1:
   resolved "https://registry.yarnpkg.com/check-types/-/check-types-11.1.2.tgz#86a7c12bf5539f6324eb0e70ca8896c0e38f3e2f"
   integrity sha512-tzWzvgePgLORb9/3a0YenggReLKAIb2owL03H2Xdoe5pKcUyWRSEQ8xfCar8t2SIAuEDwtmx2da1YB52YuHQMQ==
 
-chokidar@^3.4.2, chokidar@^3.5.3:
+"chokidar@>=3.0.0 <4.0.0", chokidar@^3.4.2, chokidar@^3.5.3:
   version "3.5.3"
   resolved "https://registry.yarnpkg.com/chokidar/-/chokidar-3.5.3.tgz#1cf37c8707b932bd1af1ae22c0432e2acd1903bd"
   integrity sha512-Dr3sfKRP6oTcjf2JmUmFJfeVMvXBdegxB0iVQ5eb2V10uFJUCAS8OByZdVAyVb8xXNz3GjjTgj9kLWsZTqE6kw==
@@ -4801,6 +4806,11 @@ immer@^9.0.7:
   version "9.0.12"
   resolved "https://registry.yarnpkg.com/immer/-/immer-9.0.12.tgz#2d33ddf3ee1d247deab9d707ca472c8c942a0f20"
   integrity sha512-lk7UNmSbAukB5B6dh9fnh5D0bJTOFKxVg2cyJWTYrWRfhLrLMBquONcUs3aFq507hNoIZEDDh8lb8UtOizSMhA==
+
+immutable@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/immutable/-/immutable-4.0.0.tgz#b86f78de6adef3608395efb269a91462797e2c23"
+  integrity sha512-zIE9hX70qew5qTUjSS7wi1iwj/l7+m54KWU247nhM3v806UdGj1yDndXj+IOYxxtW9zyLI+xqFNZjTuDaLUqFw==
 
 import-fresh@^3.0.0, import-fresh@^3.1.0, import-fresh@^3.2.1:
   version "3.3.0"
@@ -7179,6 +7189,13 @@ react-error-overlay@^6.0.10:
   resolved "https://registry.yarnpkg.com/react-error-overlay/-/react-error-overlay-6.0.10.tgz#0fe26db4fa85d9dbb8624729580e90e7159a59a6"
   integrity sha512-mKR90fX7Pm5seCOfz8q9F+66VCc1PGsWSBxKbITjfKVQHMNF2zudxHnMdJiB1fRCb+XsbQV9sO9DCkgsMQgBIA==
 
+react-geocode@^0.2.3:
+  version "0.2.3"
+  resolved "https://registry.yarnpkg.com/react-geocode/-/react-geocode-0.2.3.tgz#e27fa3f212a2629b2b2bb2a3a325a12b802b2dae"
+  integrity sha512-sIpbgmn1IUzAxO4haOZ6jeeFnMD8ya9PC38yiNrmJ9vPWbvAO2D/2yfCBzZjGZVUm4PRzKAc0KghXfaEnug0TQ==
+  dependencies:
+    regenerator-runtime "^0.13.3"
+
 react-is@^16.13.1:
   version "16.13.1"
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.13.1.tgz#789729a4dc36de2999dc156dd6c1d9c18cea56a4"
@@ -7313,7 +7330,7 @@ regenerate@^1.4.2:
   resolved "https://registry.yarnpkg.com/regenerate/-/regenerate-1.4.2.tgz#b9346d8827e8f5a32f7ba29637d398b69014848a"
   integrity sha512-zrceR/XhGYU/d/opr2EKO7aRHUeiBI8qjtfHqADTwZd6Szfy16la6kqD0MIUs5z5hx6AaKa+PixpPrR289+I0A==
 
-regenerator-runtime@^0.13.4, regenerator-runtime@^0.13.9:
+regenerator-runtime@^0.13.3, regenerator-runtime@^0.13.4, regenerator-runtime@^0.13.9:
   version "0.13.9"
   resolved "https://registry.yarnpkg.com/regenerator-runtime/-/regenerator-runtime-0.13.9.tgz#8925742a98ffd90814988d7566ad30ca3b263b52"
   integrity sha512-p3VT+cOEgxFsRRA9X4lkI1E+k2/CtnKtU4gcxyaCUreilL/vqI6CdZ3wxVUx3UOUg+gnUOQQcRI7BmSI656MYA==
@@ -7516,6 +7533,15 @@ sass-loader@^12.3.0:
   dependencies:
     klona "^2.0.4"
     neo-async "^2.6.2"
+
+sass@^1.49.8:
+  version "1.49.8"
+  resolved "https://registry.yarnpkg.com/sass/-/sass-1.49.8.tgz#9bbbc5d43d14862db07f1c04b786c9da9b641828"
+  integrity sha512-NoGOjvDDOU9og9oAxhRnap71QaTjjlzrvLnKecUJ3GxhaQBrV6e7gPuSPF28u1OcVAArVojPAe4ZhOXwwC4tGw==
+  dependencies:
+    chokidar ">=3.0.0 <4.0.0"
+    immutable "^4.0.0"
+    source-map-js ">=0.6.2 <2.0.0"
 
 sax@~1.2.4:
   version "1.2.4"
@@ -7734,7 +7760,7 @@ source-list-map@^2.0.0, source-list-map@^2.0.1:
   resolved "https://registry.yarnpkg.com/source-list-map/-/source-list-map-2.0.1.tgz#3993bd873bfc48479cca9ea3a547835c7c154b34"
   integrity sha512-qnQ7gVMxGNxsiL4lEuJwe/To8UnK7fAnmbGEEH8RpLouuKbeEm0lhbQVFIrNSuB+G7tVrAlVsZgETT5nljf+Iw==
 
-source-map-js@^1.0.1, source-map-js@^1.0.2:
+"source-map-js@>=0.6.2 <2.0.0", source-map-js@^1.0.1, source-map-js@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/source-map-js/-/source-map-js-1.0.2.tgz#adbc361d9c62df380125e7f161f71c826f1e490c"
   integrity sha512-R0XvVJ9WusLiqTCEiGCmICCMplcCkIwwR11mOSD9CR5u+IXYdiseeEuXCVAjS54zqwkLcPNnmU4OeJ6tUrWhDw==
