@@ -1,0 +1,8 @@
+.map {
+  height: 50vh;
+  width: 50vw;
+}
+
+.map-marker {
+  margin-top: -30px;
+}
