@@ -13,9 +13,8 @@ export function Home(){
     lat: -3.088302, lng: -59.983801
   }
 
-  const [teste, setTeste] = useState(0);
-  //@ts-ignore
- 
+  const [clickedLatLng, setClickedLatLng] = useState(null);
+ console.log(clickedLatLng)
 
   return(
     <div className="map">
@@ -24,13 +23,18 @@ export function Home(){
           mapContainerStyle={{ width: "100%", height: "100%"}}
           center={position}
           zoom={15}
+          onClick={e => setClickedLatLng(e.latLng.toJSON())}
         >
-          <Marker position={position}  options={{
+          <Marker position={clickedLatLng}  options={{
             label: {
               text: "Teste",
               className: "map-marker"
             },
             draggable: true,
+            position: {
+              lat: clickedLatLng.lat,
+              lng: clickedLatLng.lng,
+            }
           }}/>
         </GoogleMap>
       ): <></>
