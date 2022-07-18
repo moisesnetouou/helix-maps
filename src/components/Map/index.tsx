@@ -1,5 +1,5 @@
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useJsApiLoader, GoogleMap, Marker, InfoWindow } from "@react-google-maps/api";
 import Geocode from "react-geocode";
 
@@ -7,7 +7,7 @@ import "./map.scss";
 import loadingIcon from '../../assets/images/loading.svg';
 
 import bigMarkerIcon from '../../assets/images/bigMarker.png';
-import {coordenadas} from './data';
+import {coordenadas, coordenadas2} from './data';
 
 interface PositionData {
   lat: number;
@@ -30,12 +30,13 @@ export function Map(){
   // const [isClickMap, setIsClickMap] = useState(false);
 
   const [positionCenter, setPositionCenter] = useState({lat:-3.0115875939510874, lng:  -59.96083744392599})
-
-
+  const [allStores, setAllStores] = useState(coordenadas);
+const [positionZoom, setPositionZoom] = useState(50);
   const [activeMarker, setActiveMarker] = useState(null);
 
   Geocode.setApiKey(process.env.REACT_APP_GOOGLE_KEY);
   Geocode.setLanguage("pt-BR");
+
 
   // function handleGetAddress(e: any){
   //   const coordinates = e.latLng.toJSON()
@@ -82,7 +83,7 @@ export function Map(){
             zoom={15}
             // onClick={e => handleGetAddress(e)}
           >
-            {coordenadas.map(item => {
+            {allStores.map(item => {
               return(
                 <Marker
                   key={item.id}
@@ -132,14 +133,20 @@ export function Map(){
         </div>
       )} */}
 
-     <section className="teste-section">
+     {allStores === coordenadas && (
+        <section className="teste-section">
         {coordenadas.map(select => {
           return(
             <button type="button" onClick={()=> handleCenterMap({lat: select.lat, lng: select.lng, id: select.id})}>{select.name}</button>
           )
         })}
-     </section>
+      </section>
+     )}
 
+     <section className="teste-section">
+        <button type="button" onClick={()=> setAllStores(coordenadas)}>Manaus</button>
+        <button type="button" onClick={()=> setAllStores(coordenadas2)}>Pará</button>
+      </section>
     </main>
   );
 }

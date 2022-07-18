@@ -28,3 +28,13 @@ export const coordenadas = [
     address: "Rua Itaeté, 24 - Térreo, Amazonino Mendes, Manaus - AM"
   }
 ];
+
+export const coordenadas2 = [
+  {
+    id: 1,
+    name: 'Cidade de Deus - Matriz',
+    lat: -3.0185149,
+    lng: -59.9466991,
+    address: "Av. Nossa Sra. de Fátima - Cidade de Deus 69099-255, Manaus - AM"
+  },
+];
