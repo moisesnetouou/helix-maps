@@ -6,7 +6,39 @@
 }
 
 .map-marker {
-  margin-top: -30px;
+  margin-top: -60px;
+}
+
+.marker-info-box {
+  width: 200px;
+  color: black;
+
+  h1 {
+    font-size: 1rem;
+  }
+
+  span {
+    display: block;
+    margin-top: -1rem;
+  }
+}
+
+.teste-section {
+  margin-top: 5rem;
+  display: flex;
+  gap: 1rem;
+
+  button {
+    padding: 1rem;
+  }
+}
+
+.teste {
+  display: flex;
+  
+  iframe {
+    width: 100%;
+  }
 }
 
 .location {
@@ -27,4 +59,5 @@ border: 1px solid rgba(67, 65, 83, 0.21);
   h3 + h3 {
     margin-top: 1rem;
   }
+  
 }
