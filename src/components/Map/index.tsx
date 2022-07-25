@@ -21,54 +21,56 @@ export function Map(){
     googleMapsApiKey: process.env.REACT_APP_GOOGLE_KEY,
   })
 
-  // const position = {
-  //   lat: -3.088302, lng: -59.983801
-  // }
+  const position = {
+    lat: -3.088302, lng: -59.983801
+  }
 
-  // const [addressData, setAddressData] = useState(null);
-  // const [clickedLatLng, setClickedLatLng] = useState(position);
-  // const [isClickMap, setIsClickMap] = useState(false);
+  const [addressData, setAddressData] = useState(null);
+  const [clickedLatLng, setClickedLatLng] = useState(position);
+  const [isClickMap, setIsClickMap] = useState(false);
 
   const [positionCenter, setPositionCenter] = useState({lat:-3.0115875939510874, lng:  -59.96083744392599})
   const [allStores, setAllStores] = useState(coordenadas);
 const [positionZoom, setPositionZoom] = useState(50);
   const [activeMarker, setActiveMarker] = useState(null);
-
+  const [currentZoom, setCurrentZoom] = useState(15);
   Geocode.setApiKey(process.env.REACT_APP_GOOGLE_KEY);
   Geocode.setLanguage("pt-BR");
 
 
-  // function handleGetAddress(e: any){
-  //   const coordinates = e.latLng.toJSON()
-  //   setClickedLatLng(coordinates);
+  function handleGetAddress(e: any){
+    const coordinates = e.latLng.toJSON()
+    setClickedLatLng(coordinates);
 
-  //   const lat = coordinates.lat.toString();
-  //   const lng = coordinates.lng.toString();
-  //   console.log('teste', lat)
+    const lat = coordinates.lat.toString();
+    const lng = coordinates.lng.toString();
+    console.log('teste', lat)
     
-  //   Geocode.fromLatLng(lat, lng).then(
-  //     (response) => {
-  //       const address = response.results[0].formatted_address;
-  //       console.log(response)
-  //       setAddressData(address);
+    Geocode.fromLatLng(lat, lng).then(
+      (response) => {
+        const address = response.results[0].formatted_address;
+        console.log(response)
+        setAddressData(address);
 
-  //       console.log(address);
-  //       setIsClickMap(true);
-  //     },
-  //     (error) => {
-  //       console.error(error);
-  //     }
-  //   );
-  // }
+        console.log(address);
+        setIsClickMap(true);
+      },
+      (error) => {
+        console.error(error);
+      }
+    );
+  }
 
   function handleCenterMap({lat, lng, id}: PositionData){
     setPositionCenter({lat, lng});
+    setCurrentZoom(15)
 
     if (id === activeMarker) {
       return;
     }
     setActiveMarker(id);
   }
+
 
   return(
     <main>
@@ -80,8 +82,9 @@ const [positionZoom, setPositionZoom] = useState(50);
               lat: positionCenter.lat,
               lng: positionCenter.lng
             }}
-            zoom={15}
-            // onClick={e => handleGetAddress(e)}
+            zoom={currentZoom}
+            options={{zoom: currentZoom}}
+            onClick={e => handleGetAddress(e)}
           >
             {allStores.map(item => {
               return(
@@ -91,6 +94,7 @@ const [positionZoom, setPositionZoom] = useState(50);
                     lat: item.lat,
                     lng: item.lng
                   }} 
+                  // onPositionChanged={}
                   onClick={()=>handleCenterMap({ lat: item.lat, lng: item.lng,id: item.id})}
                   options={{
                     icon: {
@@ -102,6 +106,7 @@ const [positionZoom, setPositionZoom] = useState(50);
                       lat: item.lat,
                       lng: item.lng,
                     },
+                    //@ts-ignore
                   }}
                 >
                   {activeMarker === item.id ? (
@@ -121,7 +126,7 @@ const [positionZoom, setPositionZoom] = useState(50);
         )}
       </div>
 
-      {/* {isClickMap && (
+      {isClickMap && (
         <div className="location">
           <h3>
             <span>Localização:</span> {addressData}
@@ -131,7 +136,7 @@ const [positionZoom, setPositionZoom] = useState(50);
             <span>Coordenadas:</span> {clickedLatLng.lat}, {clickedLatLng.lng}
           </h3>
         </div>
-      )} */}
+      )}
 
      {allStores === coordenadas && (
         <section className="teste-section">
